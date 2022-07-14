@@ -1,0 +1,36 @@
+{
+  "buildDate": {
+    "seconds": 0,
+    "nanos": 0
+  },
+  "carKind": 0,
+  "sportCarMotor": {
+    "velocity": 1,
+    "horseForce": 2
+  }
+}
+
+[
+	{
+		"buildDate": {
+			"seconds": 0,
+			"nanos": 0
+		},
+		"carKind": 0,
+		"sportCarMotor": {
+			"velocity": 1,
+			"horseForce": 2
+		}
+	},
+	{
+		"buildDate": {
+			"seconds": 0,
+			"nanos": 0
+		},
+		"carKind": 1,
+		"regularCarMotor": {
+			"velocity": 2,
+			"horseForce": 3
+		}
+	}
+]

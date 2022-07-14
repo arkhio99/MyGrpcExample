@@ -1,0 +1,41 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+service CarBuilder {
+    rpc BuildCar (BuildCarRequest) returns (Car) {};
+    rpc BuildCars (stream BuildCarRequest) returns (stream Car) {};
+}
+
+message Car {
+    double Velocity = 1;
+    double HorseForce = 2;
+    enum BuildStatus {
+        Started = 0;
+        Finished = 1;
+        WithError = 2;
+    }
+    BuildStatus Status = 4;
+}
+
+message BuildCarRequest {
+    google.protobuf.Timestamp BuildDate = 1;
+    int32 CarKind = 2;
+    oneof request_oneof {
+        SportCarMotor SportCarMotor = 3;
+        RegularCarMotor RegularCarMotor = 4;
+    }
+    map<string, double> AdditionalParameters = 5;
+}
+
+message SportCarMotor {
+    double Velocity = 1;
+    double HorseForce = 2;
+    repeated string List1 = 3;
+}
+
+message RegularCarMotor {
+    double Velocity = 1;
+    double HorseForce = 2;
+    repeated double List2 = 3;
+}
